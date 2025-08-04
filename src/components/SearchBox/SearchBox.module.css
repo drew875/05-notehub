@@ -1,0 +1,19 @@
+.form {
+    flex: 1;
+    min-width: 200px;
+}
+
+.input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #111827;
+    outline: none;
+}
+
+.input::placeholder {
+    color: #9ca3af;
+}
