@@ -6,14 +6,6 @@ const client = axios.create({
     baseURL: BASE,
 });
 
-client.interceptors.request.use((config) => {
-    const token = import.meta.env.VITE_NOTEHUB_TOKEN;
-    if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-});
-
 export interface FetchNotesResponse {
     data: Note[];
     totalPages: number;
@@ -34,13 +26,11 @@ export async function fetchNotes(
         "/notes",
         { params }
     );
-
     return {
         data: resp.data.notes,
         totalPages: resp.data.totalPages,
     };
 }
-
 export async function createNote(input: {
     title: string;
     content: string;
